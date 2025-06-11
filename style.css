@@ -108,7 +108,7 @@ textarea:not([rows]) {
 body {
   font-family: "Poppins", sans-serif;
   color: var(--Grey-500);
-  background-color: var(--White);
+  background-color: hsl(212, 6%, 44%, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
