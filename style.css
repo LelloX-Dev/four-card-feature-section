@@ -1,0 +1,239 @@
+:root {
+  /*Primary*/
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  /*Neutral*/
+  --Grey-500: hsl(234, 12%, 34%);
+  --Grey-400: hsl(212, 6%, 44%);
+  --White: hsl(0, 0%, 100%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* style */
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--Grey-500);
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 32rem;
+  margin: 2rem 0;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+header h1 span {
+  font-weight: 600;
+}
+
+header p {
+  font-size: 0.9375rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: fit-content;
+}
+
+.card {
+  background-color: var(--White);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 0.75rem 1rem hsla(212, 100%, 30%, 0.15);
+  max-width: 21.5rem;
+  width: 100%;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.card p {
+  font-size: 13px;
+  margin-top: 0.5rem;
+  color: var(--Grey-400);
+  margin-bottom: 2rem;
+}
+
+.card:nth-child(1) {
+  border-top: 0.25rem solid var(--Cyan);
+}
+
+.card:nth-child(2) {
+  border-top: 0.25rem solid var(--Red);
+}
+
+.card:nth-child(3) {
+  border-top: 0.25rem solid var(--Orange);
+}
+
+.card:nth-child(4) {
+  border-top: 0.25rem solid var(--Blue);
+}
+
+.img-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 48em) {
+  body {
+    padding: 0 2rem;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+  }
+
+  .card:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+
+  .card:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .card:nth-child(4) {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+}
